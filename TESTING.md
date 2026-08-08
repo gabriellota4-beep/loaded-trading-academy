@@ -46,8 +46,8 @@ Expected: no system-check issues.
 | Course CRUD | As staff create, edit, unpublish, and delete a test course | UI and database immediately reflect changes | Pass locally |
 | CRUD authorization | Repeat staff routes as normal user | Access is denied | Pass locally |
 | Unpublished course | Open its known public URL | 404 returned | Pass locally |
-| Checkout | Purchase using Stripe test card | Stripe-hosted page returns to processing/success view | Requires deployed Stripe test keys |
-| Webhook | Complete a Stripe test payment | Order becomes paid and lesson appears | Requires deployed webhook |
+| Checkout | Purchase using Stripe test card | Stripe-hosted page returns to successful payment view | Pass on live site, 9 Aug 2026 |
+| Webhook | Complete a Stripe test payment | Order becomes paid and course appears in My Learning | Pass on live site, 9 Aug 2026 |
 | Duplicate purchase | Attempt checkout for an owned course | User is informed and no new order is created | Pass locally |
 | Lesson privacy | Copy lesson URL into logged-out/private browser | Login/access protection prevents content exposure | Pass locally |
 | Review create/update | Save twice on the same owned course | Existing review updates; duplicate is not created | Pass locally |
@@ -109,10 +109,16 @@ Any third-party warnings caused by generated Stripe or Django markup should be d
 
 ## Final deployment retest
 
-The following remain to be completed against the live URL immediately after deployment:
+Completed against the live Heroku application on 9 August 2026:
 
-- real PostgreSQL migration;
-- Stripe test checkout and webhook delivery;
-- live responsive/browser matrix;
-- live Lighthouse results;
-- deployed link and screenshots in `README.md`.
+- PostgreSQL provisioned and all migrations applied;
+- demonstration course catalogue seeded;
+- registration and authenticated profile verified;
+- Stripe-hosted test checkout completed;
+- signed `checkout.session.completed` webhook fulfilled the order;
+- successful payment page displayed the paid order total;
+- protected course ownership appeared in My Learning;
+- production static CSS loaded correctly;
+- deployed link added to `README.md`.
+
+The remaining submission evidence task is to record the final browser/responsive and Lighthouse results.
