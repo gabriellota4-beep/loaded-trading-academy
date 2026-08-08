@@ -8,7 +8,7 @@ The project was created for Code Institute Milestone Project 4. It demonstrates 
 
 ## Live project
 
-- Live site: to be added after deployment
+- Live site: [Loaded Trading Academy](https://loaded-trading-academy-gabriel-cbbf56c8f238.herokuapp.com/)
 - Repository: [gabriellota4-beep/loaded-trading-academy](https://github.com/gabriellota4-beep/loaded-trading-academy)
 
 ## Purpose and value
