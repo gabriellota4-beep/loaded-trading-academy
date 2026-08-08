@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical trading education for structured traders.">
+  <title>{% block title %}Loaded Trading Academy{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/learning.css' %}">
+  <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'home' %}">LOADED <span>ACADEMY</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="{% url 'courses:list' %}">Courses</a>
+      <a href="{% url 'about' %}">About</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'profiles:detail' %}">My profile</a>
+        {% if user.is_staff %}<a href="{% url 'courses:create' %}">Add course</a>{% endif %}
+        <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button>Log out</button></form>
+      {% else %}
+        <a href="{% url 'login' %}">Log in</a>
+        <a href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </nav>
+  </header>
+  {% if messages %}<div class="messages" aria-live="polite">{% for message in messages %}<p class="{{ message.tags }}">{{ message }}</p>{% endfor %}</div>{% endif %}
+  <main>{% block content %}{% endblock %}</main>
+  <footer><p>© {% now "Y" %} Loaded Trading Academy. Education, not financial advice.</p></footer>
+</body>
+</html>

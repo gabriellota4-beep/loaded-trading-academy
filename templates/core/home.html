@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero"><div><p class="eyebrow">STRUCTURE IS DESTINY</p><h1>Trade structure.<br>Not emotion.</h1><p>Focused education for traders who want a repeatable process, disciplined execution and measurable progress.</p><a class="button" href="{% url 'courses:list' %}">Explore courses</a></div></section>
+<section class="section"><h2>Featured learning</h2><div class="grid">{% for course in featured_courses %}{% include 'courses/_card.html' %}{% empty %}<p>Courses are being prepared.</p>{% endfor %}</div></section>
+{% endblock %}

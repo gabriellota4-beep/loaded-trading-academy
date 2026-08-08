@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Learn {{ course.title }} | Loaded Trading Academy{% endblock %}
+{% block content %}
+<article class="section lesson">
+  <p class="eyebrow">ENROLLED COURSE · {{ course.get_level_display|upper }}</p>
+  <h1>{{ course.title }}</h1>
+  <p class="lead">{{ course.summary }}</p>
+  <div class="lesson-content">
+    {{ course.lesson_content|default:"Lesson material is being prepared."|linebreaks }}
+  </div>
+  <a class="button button-secondary" href="{{ course.get_absolute_url }}">Back to course</a>
+</article>
+{% endblock %}

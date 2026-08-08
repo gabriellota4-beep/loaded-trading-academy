@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Courses | Loaded Trading Academy{% endblock %}
+{% block content %}<section class="section"><h1>Trading courses</h1><form class="search" method="get"><label for="q">Search courses</label><input id="q" name="q" value="{{ query }}"><button>Search</button></form><div class="grid">{% for course in courses %}{% include 'courses/_card.html' %}{% empty %}<p>No matching courses found.</p>{% endfor %}</div></section>{% endblock %}

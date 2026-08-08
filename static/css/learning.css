@@ -1,0 +1,36 @@
+.lesson {
+  max-width: 860px;
+}
+
+.lesson-content {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+}
+
+.learning-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d8d5cd;
+}
+
+.button-secondary {
+  background: transparent;
+  border: 2px solid var(--ink);
+}
+
+.about-page .lead {
+  max-width: 800px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 700px) {
+  .learning-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
