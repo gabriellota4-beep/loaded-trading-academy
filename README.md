@@ -253,6 +253,10 @@ The suite verifies:
 
 Full manual testing results and browser checks are documented in [TESTING.md](TESTING.md).
 
+### Verified live payment flow
+
+On 9 August 2026, the deployed application completed an end-to-end Stripe sandbox purchase for **Market Structure Foundations**. Stripe Checkout accepted the test payment, the signature-verified webhook returned successfully, the PostgreSQL order changed to paid, and the success page confirmed that the purchased course was available in My Learning.
+
 ## Agile development
 
 The implementation was divided into user-focused milestones:
